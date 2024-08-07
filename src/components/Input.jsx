@@ -18,7 +18,9 @@ const Input = ({
       <div
         className={`flex gap-1 w-full border rounded-md transition duration-150 overflow-hidden ${
           prefixPosition === 'left' ? 'flex-row-reverse' : ''
-        } ${isFocused ? 'border-lime' : 'border-light-text'}`}
+        } ${isFocused ? 'border-lime' : 'border-light-text'} ${
+          error ? '!border-[red]' : ''
+        }`}
       >
         <input
           type={type}
@@ -32,7 +34,7 @@ const Input = ({
           <div
             className={`p-1.5 px-4 text-lg font-bold text-main-dark/80 transition duration-150 ${
               isFocused ? 'bg-lime' : 'bg-main-light'
-            } `}
+            } ${error ? '!bg-[red] text-white' : ''}`}
           >
             {prefix}
           </div>
