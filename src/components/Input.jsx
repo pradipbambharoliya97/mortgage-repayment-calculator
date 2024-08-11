@@ -11,10 +11,13 @@ const Input = ({
 }) => {
   const [isFocused, setIsFocused] = useState(false);
   return (
-    <div className='flex flex-col gap-2 items-start '>
-      {label && (
-        <label className='text-light-text text-sm font-medium'>{label}</label>
-      )}
+    <div className='flex flex-col gap-2 items-start ' aria-label='input'>
+      <label
+        className='text-light-text text-sm font-medium'
+        htmlFor={`html-${label}`}
+      >
+        {label}
+      </label>
       <div
         className={`flex gap-1 w-full border rounded-md transition duration-150 overflow-hidden ${
           prefixPosition === 'left' ? 'flex-row-reverse' : ''
@@ -23,6 +26,7 @@ const Input = ({
         }`}
       >
         <input
+          id={`html-${label}`}
           type={type}
           value={value}
           onFocus={() => setIsFocused(true)}

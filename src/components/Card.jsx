@@ -48,7 +48,7 @@ const Card = () => {
   return (
     <section className='flex max-md:flex-col rounded-2xl bg-white text-black/80 overflow-hidden m-4 max-w-[95vw] lg:max-w-[75vw] xl:max-w-[50vw]'>
       <div className='p-6 md:w-1/2'>
-        <div className='flex items-center justify-between'>
+        <div className='flex items-center justify-between' aria-label='header'>
           <h1 className='text-xl font-bold'>Mortgage Calculator</h1>
           <div
             className='font-medium underline underline-offset-1 text-xs text-light-text cursor-pointer hover:text-main-dark transition duration-150'
@@ -82,7 +82,10 @@ const Card = () => {
               );
             }}
           />
-          <div className='flex max-md:flex-col md:items-start gap-4 w-full *:flex-1'>
+          <div
+            className='flex max-md:flex-col md:items-start gap-4 w-full *:flex-1'
+            aria-label='radio-inputs'
+          >
             <Controller
               name='term'
               control={control}
